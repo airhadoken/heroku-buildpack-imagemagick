@@ -51,7 +51,7 @@ if [[ ! -f $CACHE_FILE || ! -z "$IM_FORCE_INSTALL" ]]; then
 else
   # cache exists, extract it
   echo "-----> Extracting ImageMagick $CACHE_FILE => $VENDOR_DIR"
-  if [ ! -d $VENDOR_DIR ]
+  if [ ! -d $VENDOR_DIR ]; then
     mkdir $VENDOR_DIR
   fi
   tar xzf $CACHE_FILE -C $VENDOR_DIR
